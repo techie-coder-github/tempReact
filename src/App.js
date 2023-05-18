@@ -1,18 +1,22 @@
 import './App.css';
 import arrow from './resource/arrow.png'
 import menu from './resource/menu.png'
-import script from './script.js'
+import {useState} from 'react';
 
 function App() {
+    const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
   return (
     <div className="App">
-     <script src={script}></script>
       <nav class="navbar">
           <div className="navbar-brand"><a href="index.html">KKS</a></div>
-          <button class="nav-toggle">
+          <button class="nav-toggle" onClick={toggleNav}>
             <img src={menu} alt="Menu icon"/>
           </button>
-         <ul class="navbar-menu">
+          <ul className={`navbar-menu ${isNavOpen ? 'show' : ''}`}>
           <li><a href="#">Home</a></li>
           <li><a href="#">About</a></li>
           <li><a href="#">Works</a></li>
@@ -83,7 +87,6 @@ function App() {
       </div>
       <p>&copy; 2023 KKS. All rights reserved.</p>
       </footer> 
-      <script src={script}></script> 
     </div>
   );
 }
