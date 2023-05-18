@@ -2,6 +2,7 @@ import './App.css';
 import arrow from './resource/arrow.png'
 import menu from './resource/menu.png'
 import {useState} from 'react';
+import Content from './components/Content';
 
 function App() {
     const [isNavOpen, setIsNavOpen] = useState(false);
@@ -30,7 +31,7 @@ function App() {
           </ul>
       </nav>
       <div className="content">
-          <h1>Test</h1>
+          <Content />
       </div>
       <footer>
         <div className="row">
@@ -79,7 +80,7 @@ function App() {
                 <h3>Be creative,</h3>
                 <h2>Be Solutive</h2>
                 <div className='newsletter'>
-                    <input type="email" height="30px" width="300px" placeholder="Enter your email address"/>
+                    <input type="email" placeholder="Enter your email address"/>
                     <input type="image" src={arrow} alt="Submit"/>
                 </div>
                 </div>
